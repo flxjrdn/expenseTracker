@@ -12,3 +12,6 @@ class Book:
     def show_expenses(self):
         for expense in self.expenses:
             expense.show()
+
+    def get_expenses(self, year, month):
+        return [exp for exp in self.expenses if exp.in_month(year, month)]
