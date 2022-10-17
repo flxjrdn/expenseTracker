@@ -42,3 +42,5 @@ if __name__ == '__main__':
     print(calc.sum_month(2022, 1))
     print(calc.sum_month(2022, 2))
     print(calc.avg_month(2022))
+
+    print(book.sort())

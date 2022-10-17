@@ -1,4 +1,5 @@
 import Expense
+import numpy as np
 from datetime import date
 from dateutil.relativedelta import relativedelta
 
@@ -24,3 +25,7 @@ class Book:
 
     def get_expenses(self, year, month):
         return [exp for exp in self.expenses if exp.in_month(year, month)]
+
+    def sort(self):
+        e = np.array([exp.to_list() for exp in self.expenses])
+        return e

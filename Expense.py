@@ -14,3 +14,6 @@ class Expense:
 
     def in_month(self, year, month):
         return (year == self.date.year) & (month == self.date.month)
+
+    def to_list(self):
+        return [self.name, self.amount, self.date]
