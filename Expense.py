@@ -1,4 +1,5 @@
 from datetime import date
+import pandas as pd
 
 
 class Expense:
@@ -17,3 +18,9 @@ class Expense:
 
     def to_list(self):
         return [self.name, self.amount, self.date]
+
+    @staticmethod
+    def get_attributes():
+        return ['name',
+                'amount',
+                'date']
