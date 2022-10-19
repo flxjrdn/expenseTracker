@@ -34,6 +34,8 @@ class Book:
                           columns=Expense.get_attributes())
         return df
 
-    def sort(self):
+    def sorted_expenses(self):
         df = self.to_df()
+        df.sort_values(by=['date', 'name', 'amount'],
+                       inplace=True)
         return df

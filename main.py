@@ -1,10 +1,11 @@
-import Book
-import Calculator
+from Book import Book
+from Calculator import Calculator
+from Writer import Writer
 from datetime import date
 
 
 def create_example_book():
-    book = Book.Book()
+    book = Book()
     book.add_monthly_expense('etf-1', 700,
                              start=date(2022, 1, 1), finish=date(2022, 12, 1))
     book.add_monthly_expense('etf-2', 300,
@@ -36,11 +37,11 @@ if __name__ == '__main__':
     print('Expense Tracker v0.1')
 
     book = create_example_book()
-    book.show_expenses()
 
-    calc = Calculator.Calculator(book)
+    calc = Calculator(book)
     print(calc.sum_month(2022, 1))
     print(calc.sum_month(2022, 2))
     print(calc.avg_month(2022))
 
-    print(book.sort())
+    writer = Writer(book)
+    writer.to_csv()
