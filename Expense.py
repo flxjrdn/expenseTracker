@@ -1,5 +1,5 @@
+from datetime import datetime
 from datetime import date
-import pandas as pd
 
 
 class Expense:
@@ -18,6 +18,14 @@ class Expense:
 
     def to_list(self):
         return [self.name, self.amount, self.date]
+
+    @staticmethod
+    def from_df_row(df_row):
+        d = datetime.strptime(df_row['date'], '%Y-%m-%d').date()
+        expense = Expense(df_row['name'],
+                          df_row['amount'],
+                          d)
+        return expense
 
     @staticmethod
     def get_attributes():

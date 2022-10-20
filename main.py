@@ -1,6 +1,7 @@
 from Book import Book
 from Calculator import Calculator
 from Writer import Writer
+from Reader import Reader
 from datetime import date
 
 
@@ -36,7 +37,12 @@ def create_example_book():
 if __name__ == '__main__':
     print('Expense Tracker v0.1')
 
-    book = create_example_book()
+    # book = create_example_book()
+
+    reader = Reader()
+    book = reader.from_csv('expenses.csv')
+
+    book.show_expenses()
 
     calc = Calculator(book)
     print(calc.sum_month(2022, 1))
@@ -44,4 +50,5 @@ if __name__ == '__main__':
     print(calc.avg_month(2022))
 
     writer = Writer(book)
-    writer.to_csv()
+    # writer.to_csv()
+

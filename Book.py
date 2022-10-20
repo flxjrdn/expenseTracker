@@ -34,6 +34,15 @@ class Book:
                           columns=Expense.get_attributes())
         return df
 
+    def clear_expenses(self):
+        self.expenses = []
+
+    def from_df(self, df: pd.DataFrame):
+        self.clear_expenses()
+        for i in df.index:
+            exp = Expense.from_df_row(df.iloc[i])
+            self.expenses.append(exp)
+
     def sorted_expenses(self):
         df = self.to_df()
         df.sort_values(by=['date', 'name', 'amount'],
