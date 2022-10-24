@@ -2,6 +2,7 @@ from Book import Book
 from Calculator import Calculator
 from Writer import Writer
 from Reader import Reader
+from Categorizer import Categorizer
 from datetime import date
 
 
@@ -43,6 +44,11 @@ if __name__ == '__main__':
     book = reader.from_csv('expenses.csv')
 
     book.show_expenses()
+
+    categorizer = Categorizer(book)
+    cat = categorizer.get_category(book.get_expenses(2022, 1)[0])
+    print(cat)
+
 
     calc = Calculator(book)
     print(calc.sum_month(2022, 1))
