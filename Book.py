@@ -20,8 +20,7 @@ class Book:
             d = d + relativedelta(months=+1)
 
     def show_expenses(self):
-        for expense in self.expenses:
-            expense.show()
+        print(self.to_df().to_string(index=False))
 
     def get_expenses(self, year, month):
         return [exp for exp in self.expenses if exp.in_month(year, month)]
