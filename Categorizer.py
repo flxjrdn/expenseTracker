@@ -27,6 +27,7 @@ class Categorizer:
         self.mapping['restaurant'] = self.Category.fun
         self.mapping['spotify'] = self.Category.fun
         self.mapping['streaming'] = self.Category.fun
+        self.mapping['cinema'] = self.Category.fun
 
     def __init__(self, book):
         self.book = book
