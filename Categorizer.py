@@ -19,6 +19,7 @@ class Categorizer:
         self.mapping['groceries'] = self.Category.living
         self.mapping['internet'] = self.Category.living
         self.mapping['phone'] = self.Category.living
+        self.mapping['insurance'] = self.Category.living
 
         self.mapping['shirt'] = self.Category.clothing
         self.mapping['jeans'] = self.Category.clothing
